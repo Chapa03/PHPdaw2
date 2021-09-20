@@ -1,4 +1,7 @@
 <?php
+
+//     Pedir infinitos números enteros (hasta que se introduzca) el cero. 
+//     Indicar finalmente cuál fue el máximo y cuál fue el mínimo.
     $numero = 0;
     
     echo "Introduce tu numero: ";
