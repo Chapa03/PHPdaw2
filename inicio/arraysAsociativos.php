@@ -40,9 +40,10 @@
         'maria' => 'rosa',
         'pepe' => 'azul'
     ];
+    echo "\n";
     
     foreach ($miColorFavorito as $k => $v){
-        echo "($k)$v ";
+        echo "($k)$v \n";
     }
     
 ?>
