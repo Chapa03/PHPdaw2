@@ -1,6 +1,6 @@
 <form action="dos.php" method="post" enctype="multipart/form-data" >
 
-	Dime tu nombre y tu foro
+	Dime tu nombre y tu foto
 	<br/>
 	
 	Nombre
