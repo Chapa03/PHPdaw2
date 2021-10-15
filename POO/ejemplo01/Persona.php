@@ -14,8 +14,9 @@
         //en php no se puede sobrecargar el constructore
         //podemos pasarle un parámetro por defecto, para el caso
         //en que al no pasarle ese atributo, que lo genere
-        public function __construct($edad=18){
-            $this->edad = $edad;
+        public function __construct($nombre = 'John Doe', $edad = 10){
+            $this -> nombre = $nombre;
+            $this -> edad = $edad;
         }
         
         /**
@@ -56,7 +57,7 @@
         }
         
         public function __toString(){
-            return "{this -> nombre} [{$this -> edad}]";
+            return "{$this -> nombre} [{$this -> edad}]";
         }
         
         
