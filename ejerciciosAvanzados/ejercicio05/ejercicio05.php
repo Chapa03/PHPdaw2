@@ -95,7 +95,9 @@ legend {
 	</form>
 	
 	<!-- falta el atributo value para cada radioButton, ya que sino, solo mandan
-	on en caso de activarse uno y no se sabe cual ha sido -->
+	on en caso de activarse uno y no se sabe cual ha sido 
+	El id es el mismo para los 3 radiobuttons y debería ser distinto. Eso
+	habilitaría también la opción de accesibilidad de los label for-->
 	<form name="f5" method="get">
 		<fieldset>
 			<legend>Formulario 5</legend>
@@ -111,69 +113,120 @@ legend {
 			<input type="submit" value="Enviar datos" />
 		</fieldset>
 	</form>
+	
+	<!-- El ide de los 3 inputs es el mismo y debería ser distinto.
+	Esto, además, habilitaría la opción de accesibilidad de los label for,
+	que habrían de apuntar a los respectivos ID -->
 	<form name="f6" method="get">
 		<fieldset>
 			<legend>Formulario 6</legend>
-			<label for="radioCabello">Moreno</label><input type="radio"
-				name="cabello" id="cabello" value="moreno" /><label
-				for="radioCabello">Rubio</label><input type="radio" name="cabello"
-				id="cabello" value="rubio" /><label for="radioCabello">Pelirrojo</label><input
-				type="radio" name="cabello" id="cabello" value="pelirrojo" /><br />
+			<label for="radioCabello">Moreno</label>
+			<input type="radio" name="cabello" id="cabello" value="moreno" />
+			
+			<label for="radioCabello">Rubio</label>
+			<input type="radio" name="cabello" id="cabello" value="rubio" />
+			
+			<label for="radioCabello">Pelirrojo</label>
+			<input type="radio" name="cabello" id="cabello" value="pelirrojo" /><br />
+			
 			<input type="submit" value="Enviar datos" />
 		</fieldset>
 	</form>
+	
+	<!-- los label deberían añadir el atributo for y apuntar cada uno al id
+	del input al que acompaña.
+	Los input necesitan un name comun para agruparse y ser excluyentes entre sí,
+	un value, para no enviar "on" por defecto al activarse y un id exclusivo de
+	cada uno. -->
 	<form name="f7" method="get">
 		<fieldset>
 			<legend>Formulario 7</legend>
-			<label>Moreno</label><input type="radio" /><label>Rubio</label><input
-				type="radio" /><label>Pelirrojo</label><input type="radio" /><br />
+			<label>Moreno</label>
+			<input type="radio" />
+			
+			<label>Rubio</label>
+			<input type="radio" />
+			
+			<label>Pelirrojo</label>
+			<input type="radio" /><br />
+			
 			<input type="submit" value="Enviar datos" />
 		</fieldset>
 	</form>
 	<br />
 	<h3>Cajas de chequeo</h3>
+	
+	<!-- cada checkbox debe tener su id exclusivo y los label for apuntar a éstos
+	y un value que enviar para no mandar on por defecto -->
 	<form name="f8" method="get">
 		<fieldset>
 			<legend>Formulario 8</legend>
-			<label for="checkAficion">Lectura</label><input type="checkbox"
-				name="checkAficion" id="checkAficion" /><label for="checkAficion">Deporte</label><input
-				type="checkbox" name="checkAficion" id="checkAficion" /><label
-				for="checkAficion">Viajes</label><input type="checkbox"
-				name="checkAficion" id="checkAficion" /><br /> <input type="submit"
-				value="Enviar datos" />
+			<label for="checkAficion">Lectura</label>
+			<input type="checkbox" name="checkAficion" id="checkAficion" />
+			
+			<label for="checkAficion">Deporte</label>
+			<input type="checkbox" name="checkAficion" id="checkAficion" />
+			
+			<label for="checkAficion">Viajes</label>
+			<input type="checkbox" name="checkAficion" id="checkAficion" /><br /> 
+			
+			<input type="submit" value="Enviar datos" />
 		</fieldset>
 	</form>
+	
+	<!-- Todos los checkbox han de tener un name comun para estar agrupados
+	el label for del segundo input no coincide con el id del checkbox por una 's' -->
 	<form name="f9" method="get">
 		<fieldset>
 			<legend>Formulario 9</legend>
-			<label for="checkLectura">Lectura</label><input type="checkbox"
-				name="checkLectura" id="checkLectura" /><label for="checkDeporte">Deporte</label><input
-				type="checkbox" name="checkDeporte" id="checkDeportes" /><label
-				for="checkViajes">Viajes</label><input type="checkbox"
-				name="checkViajes" id="checkViajes" /><br /> <input type="submit"
-				value="Enviar datos" />
+			<label for="checkLectura">Lectura</label>
+			<input type="checkbox" name="checkLectura" id="checkLectura" />			
+				
+			<label for="checkDeporte">Deporte</label>
+			<input type="checkbox" name="checkDeporte" id="checkDeportes" />
+			
+			<label for="checkViajes">Viajes</label>
+			<input type="checkbox" name="checkViajes" id="checkViajes" /><br /> 
+			
+			<input type="submit" value="Enviar datos" />
 		</fieldset>
 	</form>
+	
+	<!-- Todos los checkbox han de tener un name comun para estar agrupados
+	el label for del segundo input no coincide con el id del checkbox por una 's'
+	Además, al tener los mismos ID que los checkboxes del formulario9, los label for que funcionan,
+	accionan los checkboxes de dicho formulario -->
 	<form name="f10" method="get">
 		<fieldset>
 			<legend>Formulario 10</legend>
-			<label for="checkLectura">Lectura</label><input type="checkbox"
-				name="checkLectura" id="checkLectura" value="lectura" /><label
-				for="checkDeporte">Deporte</label><input type="checkbox"
-				name="checkDeporte" id="checkDeportes" value="deporte" /><label
-				for="checkViajes">Viajes</label><input type="checkbox"
-				name="checkViajes" id="checkViajes" value="viajes" /><br /> <input
-				type="submit" value="Enviar datos" />
+			<label for="checkLectura">Lectura</label>
+			<input type="checkbox" name="checkLectura" id="checkLectura" value="lectura" />
+			
+			<label for="checkDeporte">Deporte</label>
+			<input type="checkbox" name="checkDeporte" id="checkDeportes" value="deporte" />
+			
+			<label for="checkViajes">Viajes</label>
+			<input type="checkbox" name="checkViajes" id="checkViajes" value="viajes" /><br /> 
+			
+			<input type="submit" value="Enviar datos" />
 		</fieldset>
 	</form>
+	
+	<!-- a los label les falta el atributo for para vincularse con los id (que faltan)
+	de los checkbox -->
 	<form name="f11" method="get">
 		<fieldset>
 			<legend>Formulario 11</legend>
-			<label>Lectura</label><input type="checkbox" name="checkAficiones[]"
-				value="lectura" /> <label>Deporte</label><input type="checkbox"
-				name="checkAficiones[]" value="deporte" /> <label>Viajes</label><input
-				type="checkbox" name="checkAficiones[]" value="viajes" /><br /> <input
-				type="submit" value="Enviar datos" />
+			<label>Lectura</label>
+			<input type="checkbox" name="checkAficiones[]" value="lectura" /> 
+			
+			<label>Deporte</label>
+			<input type="checkbox" name="checkAficiones[]" value="deporte" /> 
+			
+			<label>Viajes</label>
+			<input type="checkbox" name="checkAficiones[]" value="viajes" /><br /> 
+			
+			<input type="submit" value="Enviar datos" />
 		</fieldset>
 	</form>
 </body>
