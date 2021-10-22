@@ -1,4 +1,10 @@
 <?php 
+    $esAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) ? strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' : false;
+
+    if ($esAjax){
+        
+    }
+    
     $tamanio = rand(1, 3);
     
     function saludo($nombre){
