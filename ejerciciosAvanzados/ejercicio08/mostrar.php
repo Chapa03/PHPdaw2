@@ -18,18 +18,19 @@ if (isset($_REQUEST['txtNombre'])) {
     $nombre = $_REQUEST['txtNombre'];
 } // se recibe la contraseña
 /* RELLENAR */
-$clave = isset($_GET['pswClave']) ? isset($_GET['pswClave']) : '';
+$clave = (isset($_GET['pswClave'])) ? $_GET['pswClave'] : '';
 
 // se recibe el campo oculto
 if (isset($_REQUEST['hdnOculto'])) {
     $oculto = $_REQUEST['hdnOculto'];
 } // se recibe el valor seleccionado del botón de radio
 
-if (isset($_REQUEST['rdSemaforo'])) {
-    $semaforo = $_REQUEST['rdSemaforo'];
+if (isset($_REQUEST['rdColor'])) {
+    $semaforo = $_REQUEST['rdColor'];
 } // se recibe elcheckbox de publicidad
 
 /* RELLENAR */
+$publicidad = (isset($_GET['Publicidad'])) ? $_GET['Publicidad'] : 'No deseado';
 
 // se recibe el checkbox múltiple de idiomas y se trata como un array
 
@@ -44,8 +45,17 @@ if (isset($_REQUEST['cbIdioma'])) {
 }
 // se recibe el año de fin de estudios
 /* RELLENAR */
+$anioFinEstudios = (isset($_GET['selAnioFinEstudios'])) ? $_GET['selAnioFinEstudios'] : '';
+
 // se recibe el select múltiple de ciudades (códigos postales), que se trata como un array
 /* RELLENAR */
+if (isset($_GET['selCodigosPostales'])) {
+    $tamanioSelectCP = sizeof($_GET['selCodigosPostales']);
+    for ($i = 0; $i < $tamanioSelectCP; $i++){
+        $codigosPostales .= $_GET['selCodigosPostales'][$i] . ' '; 
+    }
+}
+
 // se recibe el contenido del textarea
 if (! empty($_REQUEST['txaComentarios'])) {
     $comentarios = $_REQUEST['txaComentarios'];
@@ -80,11 +90,15 @@ if (isset($_REQUEST['imagen_x'])) {
 <?php echo $comentarios; ?> 
 <br />Archivo: 
 <?php echo $archivo; ?> 
+<!-- 
 <br />Imagen: (
+
 <?php echo $imagenX; ?>
 , 
 <?php echo $imagenY; ?>
+
 ) 
+ -->
 <br />
 </body>
 </html>

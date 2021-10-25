@@ -33,7 +33,7 @@
     		<!-- Todos los radiobutton, checkbox o input texts deben ir acompañados de su label for -->
     		<b>RADIO:</b> <br /> 
     		&nbsp;&nbsp; Rojo <input type="radio" value="Rojo" name="rdColor" /> <br /> 
-    		&nbsp;&nbsp; Naranja <input type="radio" value="Naranja" name="rdColor" checked="true" /> <br /> 
+    		&nbsp;&nbsp; Naranja <input type="radio" value="Naranja" name="rdColor" checked="checked" /> <br /> 
     		&nbsp;&nbsp; Verde <input type="radio" value="Verde" name="rdColor" /> <br /> <hr /> 
     		
     		<b>CHECKBOX:</b> <br /> 
@@ -57,9 +57,9 @@
     		<b>Múltiple:</b> <br /> 
     		Ciudades: <!-- Se declara el nombre terminado en [] para tratarlo en PHP como un array --> 
     		<select name="selCodigosPostales[]" multiple="multiple">   
-    			<option value="17">Gerona</option>     
-    			<option value="28" selected="selected">Madrid</option>   
-    			<option value="50" selected="selected">Zaragoza</option> 
+    			<option value="17" name="selCodigosPostales[]">Gerona</option>     
+    			<option value="28" name="selCodigosPostales[]" selected="selected">Madrid</option>   
+    			<option value="50" name="selCodigosPostales[]" selected="selected">Zaragoza</option> 
     		</select> <br /> <hr /> 
     		
     		<b>TEXTAREA:</b> <br />   
