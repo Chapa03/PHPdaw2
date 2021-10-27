@@ -3,7 +3,7 @@ function conectarMySQL(
     $schema = 'test',
     $usu = 'root',
     $pwd = '',
-    $host = 'localhost'
+    $host = '127.0.0.1'
     ) {
         try {
             $dsn = "mysql:host=$host;dbname=$schema";
@@ -16,5 +16,4 @@ function conectarMySQL(
         }
         return $db;
 }
-
 ?>
