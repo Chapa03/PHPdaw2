@@ -1,6 +1,8 @@
 <?php
+//INCOMPLETO    
+
     echo '<h3>Parámetros enviados</h3><ul>';
-    foreach ($ as $n => $V){
+    foreach ($incompleto as $n => $V){
         echo "<li> ($n) $v</li>";
     }
 
