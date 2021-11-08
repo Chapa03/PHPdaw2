@@ -35,7 +35,7 @@ $p -> adulto = true;
 //Guardar el objeto en la base de datos pasándole su referencia
 R::store($p);
 
-//RECUPERAR UN BEAN/OBJETO --------------------------------------
+//RECUPERAR UN BEAN/OBJETO / CONSULTA ---------------------------
 //POR ID                                                ---------
 //Recuperamos el objeto a través de su ID
 $p2 = R::load('persona', 1);
