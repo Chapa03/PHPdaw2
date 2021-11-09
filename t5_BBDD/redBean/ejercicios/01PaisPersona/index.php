@@ -1,3 +1,3 @@
 <?php
-header('location:formulario.php');
+header('location:menu.php');
 ?>

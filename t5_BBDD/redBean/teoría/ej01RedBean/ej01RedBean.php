@@ -73,10 +73,10 @@ $apellido = 'García';
 // $apellidadosGarcia = R::find('persona', 'apellido="García"');
 
 //Protegido contra inyecciones de SQL con consultas preparadas:
-// $apellidadosGarcia = R::find('persona', "nombre=?' and apellido=?",[$nombre, $apellido]);
+// $apellidadosGarcia = R::find('persona', "nombre=? and apellido=?",[$nombre, $apellido]);
 //Anterior: rellena la consulta con las posiciones del array
 //Siguiente: Rellena la consulta con el array asociativo
-$apellidadosGarcia = R::find('persona', "nombre=:nom' and apellido=:ape",['nom'=>$nombre, 'ape'=>$apellido]);
+$apellidadosGarcia = R::find('persona', "nombre=:nom and apellido=:ape",['nom'=>$nombre, 'ape'=>$apellido]);
 
 foreach ($apellidadosGarcia as $persona) {
     echo 'NOMBRE: ' . $persona['nombre'] . PHP_EOL;

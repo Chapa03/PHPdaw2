@@ -1,6 +1,8 @@
 <?php
 require_once '../bd/bdh.php';
 conectar();
+$paises = R::findAll('pais');
+desconectar();
 ?>
 <h1>Lista de paises:</h1>
 <table>
@@ -9,11 +11,11 @@ conectar();
 	</tr>
 	<?php foreach ($paises as $pais):?>
 		<tr>
-			<td><?=$pais -> nombre?></td>
+			<td><?=$pais -> nombrePais?></td>
 		</tr>
 	<?php endforeach;?>
 </table>
 
-<form action="../formulario.php" method="post">
-	<input type="submit" value="Nuevo país" />
+<form action="../menu.php" method="post">
+	<input type="submit" value="Menú principal" />
 </form>
