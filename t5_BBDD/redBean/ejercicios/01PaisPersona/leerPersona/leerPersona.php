@@ -12,7 +12,7 @@ desconectar();
 	</tr>
 	<?php foreach ($personas as $persona):?>
 		<tr>
-			<td><?=$persona -> nombrePersona?></td><td><?=$persona -> paisNacimiento?></td>
+			<td><?=$persona -> nombrePersona?></td><td><?=$persona->pais->nombrePais?></td>
 		</tr>
 	<?php endforeach;?>
 </table>

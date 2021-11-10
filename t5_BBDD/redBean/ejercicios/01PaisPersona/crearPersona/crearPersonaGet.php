@@ -12,13 +12,15 @@ desconectar();
     	<input type="text" id="persona" name="nombrePersona" required="required"/>
     	<br/>
     	<label for="paises">País de nacimiento: </label>
-    	<select name="nombrePais" id="paises" required="required">
+    	<select name="idPais" id="paises" required="required">
     		<option selected>Elige un país</option>
-    		<?php 
-        		foreach ($paises as $pais){
-        		    echo '<option value="' . $pais -> nombrePais . '" >' . $pais -> nombrePais . '</option>';
-        		}
-    		?>
+    		<?php foreach ($paises as $pais):?>
+    			<option value="<?=$pais -> id?>">
+    				<?=$pais -> nombrePais?>
+    				
+    			</option>
+    		
+    		<?php endforeach;?>
     	</select>
     	<br/>
     	<input type="submit" value="Crear persona" />
