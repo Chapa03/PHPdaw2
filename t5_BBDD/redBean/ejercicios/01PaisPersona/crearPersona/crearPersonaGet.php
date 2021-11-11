@@ -2,6 +2,7 @@
 require_once '../bd/bdh.php';
 conectar();
 $paises = R::findAll('pais');
+$aficiones = R::findAll('aficion');
 desconectar();
 ?>
 
@@ -22,6 +23,17 @@ desconectar();
     		
     		<?php endforeach;?>
     	</select>
+    	<br/>
+    	<br/>
+    	<fieldset>
+    		<legend>Elegir aficiones:</legend>
+        	<?php foreach ($aficiones as $aficion):?>
+        		<input type="checkbox" name="aficion[]" value="<?=$aficion -> id ?>" id="id-<?=$aficion -> id ?>"/>
+        		<label for="id-<?=$aficion -> id ?>"><?=$aficion -> nombreAficion ?></label>
+        		
+        		<?php if((($aficion -> id) % 4) == 0){echo '<br/>';}?>
+        	<?php endforeach;?>
+    	</fieldset>
     	<br/>
     	<input type="submit" value="Crear persona" />
     	<br/>

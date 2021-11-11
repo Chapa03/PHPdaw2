@@ -8,10 +8,18 @@ desconectar();
 <table>
 	<tr>
 		<th>Nombre País</th>
+		<th>Ciudadanos</th>
 	</tr>
 	<?php foreach ($paises as $pais):?>
 		<tr>
-			<td><?=$pais -> nombrePais?></td>
+			<td>
+				<?=$pais -> nombrePais?>
+			</td>
+			<td>
+				<?php foreach ($pais -> ownPersonaList as $persona):?>
+					<?=$persona -> nombrePersona ?>
+				<?php endforeach;?>
+			</td>
 		</tr>
 	<?php endforeach;?>
 </table>
