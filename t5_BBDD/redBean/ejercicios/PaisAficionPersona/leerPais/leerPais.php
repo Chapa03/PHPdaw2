@@ -5,10 +5,14 @@ $paises = R::findAll('pais');
 desconectar();
 ?>
 <h1>Lista de paises:</h1>
-<table>
+<table border="1">
 	<tr>
-		<th>Nombre País</th>
-		<th>Ciudadanos</th>
+		<th rowspan="2">Nombre País</th>
+		<th colspan="2">Personas</th>
+	</tr>
+	<tr>
+		<th>Nacimiento</th>
+		<th>Residencia</th>
 	</tr>
 	<?php foreach ($paises as $pais):?>
 		<tr>
@@ -16,14 +20,19 @@ desconectar();
 				<?=$pais -> nombrePais?>
 			</td>
 			<td>
-				<?php foreach ($pais -> ownPersonaList as $persona):?>
+				<?php foreach ($pais -> alias('nacimiento') -> ownPersonaList as $persona):?>
+					<?=$persona -> nombrePersona ?>
+				<?php endforeach;?>
+			</td>
+			<td>
+				<?php foreach ($pais -> alias('residencia') -> ownPersonaList as $persona):?>
 					<?=$persona -> nombrePersona ?>
 				<?php endforeach;?>
 			</td>
 		</tr>
 	<?php endforeach;?>
 </table>
-
+<br/>
 <form action="../menu.php" method="post">
 	<input type="submit" value="Menú principal" />
 </form>

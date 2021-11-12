@@ -7,4 +7,6 @@
     	<br/>
 	</fieldset>
 </form>
-<a href="../leerAficion/leerAficion.php">Lista de Aficiones</a>
+<form action="../leerAficion/leerAficion.php">
+	<input type="submit" value="Lista de Aficiones" />
+</form>

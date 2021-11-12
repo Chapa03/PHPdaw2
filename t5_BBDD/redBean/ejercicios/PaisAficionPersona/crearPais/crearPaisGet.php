@@ -7,4 +7,6 @@
     	<br/>
 	</fieldset>
 </form>
-<a href="../leerPais/leerPais.php">Lista de Países</a>
+<form action="../leerPais/leerPais.php">
+	<input type="submit" value="Lista de Países" />
+</form>

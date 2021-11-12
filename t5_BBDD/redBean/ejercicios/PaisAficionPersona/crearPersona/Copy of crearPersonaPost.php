@@ -3,7 +3,7 @@ require_once '../bd/bdh.php';
 conectar();
 $nombrePersona = isset($_POST['nombrePersona']) ? $_POST['nombrePersona'] : null;
 $idPais = isset($_POST['idPais']) ? $_POST['idPais'] : null;
-$idAficiones = isset($_POST['aficion']) ? $_POST['aficion'] : null;
+$idAficiones = isset($_POST['aficion']) ? $_POST['aficion'] : [];
 
 $pais = R::load('pais', $idPais);
 
