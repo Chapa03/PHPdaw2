@@ -46,4 +46,9 @@
         echo "($k)$v \n";
     }
     
+    //crea una variable por cada indice no numérico (asociativo)
+    // con el contenido de su posición en el array
+    extract($a);
+    echo $pepe;
+    
 ?>
