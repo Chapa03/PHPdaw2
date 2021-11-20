@@ -1,11 +1,11 @@
 <!-- Desplegar una página con una lista de links -->
-<h1>Lista de links</h1>
+<?=titulo('Lista de links')?>
 
 <ul>
-	<?php foreach ($links as $nombre => $enlace):?>
+	<?php foreach ($links as $link):?>
 	
 		<li>
-			<a href="<?=$enlace?>"><?=$nombre?></a>
+			<?=anchor($link -> uri, $link -> label)?>
 		</li>
 	
 	<?php endforeach;?>	
