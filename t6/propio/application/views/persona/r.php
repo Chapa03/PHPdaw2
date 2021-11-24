@@ -6,7 +6,16 @@
     		<thead class="table-dark align-middle">
             	<tr>
             		<th>
-            			Nombre de la persona
+            			Nombre
+            		</th>
+            		<th>
+            			Nacionalidad
+            		</th>
+            		<th>
+            			Le encanta
+            		</th>
+            		<th>
+            			Odia
             		</th>
             		<th>
             			<button class="btn btn-info btn-sm float-end" type="button" onclick="location.href='<?=base_url()?>persona/c'">
@@ -18,10 +27,23 @@
         	
         	<tbody class="text-light">
             	<?php foreach ($personas as $persona):?>
-            		
             		<tr>
-            			<td colspan="2"><?=$persona -> nombre?></td>
+            			<td><?=$persona -> nombre?></td>
+            			<td><?=$persona -> fetchAs('pais') -> paisNacimiento -> nombre?></td>
+            			<td>
+            				<?php foreach ($persona -> ownGustaList as $gusto):?>
+            					<?=$gusto -> aficion -> texto?>
+            					<?='<br/>'?>
+            				<?php endforeach;?>
+            			</td>
+            			<td colspan="2">
+            				<?php foreach ($persona -> ownOdiaList as $odio):?>
+            					<?=$odio -> aficion -> texto?>
+            					<?='<br/>'?>
+            				<?php endforeach;?>
+            			</td>
             		</tr>
+            		
             	<?php endforeach;?>
         	</tbody>
         </table>

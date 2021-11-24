@@ -9,6 +9,12 @@
             			Descripción de la afición
             		</th>
             		<th>
+            			Seguidores
+            		</th>
+            		<th>
+            			Detractores
+            		</th>
+            		<th>
             			<button class="btn btn-info btn-sm float-end" type="button" onclick="location.href='<?=base_url()?>aficion/c'">
             				<i class="bi bi-pencil-square"></i> Crear nueva afición
             			</button>
@@ -20,7 +26,21 @@
             	<?php foreach ($aficiones as $aficion):?>
             		
             		<tr>
-            			<td colspan="2"><?=$aficion -> texto?></td>
+            			<td>
+            				<?=$aficion -> texto?>
+            			</td>
+            			<td>
+            				<?php foreach ($aficion -> ownGustaList as $gusta):?>
+            					<?=$gusta -> persona -> nombre?>
+            					<?='<br/>'?>
+            				<?php endforeach;?>
+            			</td>
+            			<td colspan="2">
+            				<?php foreach($aficion -> ownOdiaList as $odia):?>
+            					<?=$odia -> persona -> nombre ?>
+            					<?='<br/>'?>
+            				<?php endforeach;?>
+            			</td>
             		</tr>
             	<?php endforeach;?>
         	</tbody>
