@@ -3,8 +3,8 @@
 		<h2 class="display-5">Menú principal</h2>
 	</div>
     
-    <div class="row justify-content-around">
-    	<div class="col-xs-12 col-sm-6 col-md-3 card bg-secondary p-3 m-3" style="width: 18rem;">
+    <div class="row cartas justify-content-around">
+    	<div class="col-xs-12 col-sm-6 col-md-3 card bg-secondary p-3 m-3 border-secondary" style="width: 18rem;">
         	<img class="card-img-top" src="<?=base_url()?>/assets/img/icons/pais.png" alt="Card image cap">
           	<div class="card-body text-center">
             	<h5 class="card-title text-info text-center">Países</h5>
@@ -13,7 +13,7 @@
           	</div>
         </div>
         
-        <div class="col-xs-12 col-sm-6 col-md-3 card bg-secondary p-3 m-3" style="width: 18rem;">
+        <div class="col-xs-12 col-sm-6 col-md-3 card bg-secondary p-3 m-3 border-secondary" style="width: 18rem;">
         	<img class="card-img-top" src="<?=base_url()?>/assets/img/icons/aficion.png" alt="Card image cap">
           	<div class="card-body text-center">
             	<h5 class="card-title text-info text-center">Aficiones</h5>
@@ -22,7 +22,7 @@
           	</div>
         </div>
         
-        <div class="col-xs-12 col-sm-6 col-md-3 card bg-secondary p-3 m-3" style="width: 18rem;">
+        <div class="col-xs-12 col-sm-6 col-md-3 card bg-secondary p-3 m-3 border-secondary" style="width: 18rem;">
         	<img class="card-img-top" src="<?=base_url()?>/assets/img/icons/persona.png" alt="Card image cap">
           	<div class="card-body text-center">
             	<h5 class="card-title text-info text-center">Personas</h5>
