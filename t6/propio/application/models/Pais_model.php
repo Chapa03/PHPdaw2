@@ -15,12 +15,25 @@ class Pais_model extends CI_Model {
         }
     }
     
-    function d() {
+    function u($idPais, $nombre) {
+        $paisNuevo = R::findOne('pais','nombre=?',[$nombre]);
+        $pais = R::load('pais', $idPais);
         
+        if ($paisNuevo == null) {
+            $pais -> nombre = $nombre;
+            R::store($pais);
+        } else {
+            throw new Exception("El país {$paisNuevo -> nombre} ya existe");
+        }
     }
+    
     
     function getAll() {
         return R::findAll('pais');
+    }
+    
+    function getPaisById($id) {
+        return R::load('pais', $id);
     }
 }
 ?>
