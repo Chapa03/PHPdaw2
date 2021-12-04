@@ -38,5 +38,20 @@ class Pais extends CI_Controller {
             error($e -> getMessage(), 'pais/c');
         }
     }
+
+    //Modificar (update) paises
+    function u() {
+        
+    }
+    
+    //Borrar (delete) países
+    function d() {
+        $idPais = isset($_GET['idPais']) ? $_GET['idPais'] : null;
+        $this -> load -> model('Pais_model');
+        $this -> Pais_model -> d();
+    }
 }
+
+
+
 ?>

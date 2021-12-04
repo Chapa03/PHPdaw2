@@ -6,6 +6,9 @@
     		<thead class="table-dark align-middle">
             	<tr>
             		<th>
+            			Acciones
+            		</th>
+            		<th>
             			Nombre del país
             		</th>
             		<th>
@@ -24,6 +27,16 @@
             		
             		<tr>
             			<td>
+            				<div class="d-flex justify-content-evenly">
+            					<form action="<?=base_url()?>pais/u">
+                					<button class="btn btn-light text-primary" type="submit" name="idPais" value="<?=$pais -> id?>"><i class="bi bi-pencil text-"></i></button>
+                				</form> 
+                				<form action="<?=base_url()?>pais/d">
+                					<button class="btn btn-light text-danger" type="submit" name="idPais" value="<?=$pais -> id?>"><i class="bi bi-trash"></i></button>
+                				</form> 
+            				</div>
+            			</td>
+            			<td>
             				<?=$pais -> nombre?>
             			</td>
             			<td colspan="2">
@@ -36,6 +49,8 @@
             	<?php endforeach;?>
         	</tbody>
         </table>
-    </div>
+    	</div>
 	</div>
 </div>
+
+

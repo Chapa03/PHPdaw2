@@ -15,6 +15,10 @@ class Pais_model extends CI_Model {
         }
     }
     
+    function d() {
+        
+    }
+    
     function getAll() {
         return R::findAll('pais');
     }

@@ -1,3 +1,7 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+
 :root {
 	--sec: #6c757d;
 	--light: #f5f6f8;
@@ -24,4 +28,9 @@ tbody {
 .formulario:hover {
 	border-radius: 6px;
 	background-color: var(--tabla);
+}
+
+::selection {
+	background-color: rgb(23, 162, 184, 1);
+	color: rgb(52, 58, 64, 1);
 }

@@ -1,10 +1,11 @@
-<div class="container bg-secondary rounded text-light">
+<div class="container bg-secondary rounded text-light mb-3">
 
 	<form action="<?=base_url()?>persona/cPost" method="post">
 		<h1 class="p-3 text-info">Registrar persona</h1>
 		<div class="form-group p-2 px-3 formulario">
 			<label for="id-nombre">Nombre</label> 
 			<input type="text" name="nombre" class="form-control" id="id-nombre" placeholder="Escribe el nombre de la persona"> 
+			<small id="id-nombre" class="form-text text-muted">Introduce el nombre de una persona nueva.</small>
 		</div>
 		
 		<div class="form-group p-2 px-3 formulario">
@@ -20,12 +21,17 @@
     				
     			<?php endforeach;?>
             </select>
+            <small id="id-pais" class="form-text text-muted">Elige un país de la lista.</small>
         </div>
         
-        <div class="form-group p-2 px-3  formulario">
-        	<div class="row">
-        		<label id="aficion">Aficiones:</label> 
-    			<br/>
+        <div class="form-group p-2 px-3 formulario">
+        	<div class="row justify-content-between">
+        		<div class="xs-col-12 sm-col-2 md-col-2 inline">
+        			<label id="aficion">Aficiones: </label> 
+        		</div>
+        		<div class="xs-col-12 sm-col-4 md-col-3">
+        			<small id="aficion" class="form-text text-muted float-right">Marca todas las opciones que necesites de las dos listas.</small>
+        		</div>
         	</div>
 			
             <div class="row pt-3">
@@ -58,6 +64,9 @@
         
 		<button type="submit" class="btn btn-light text-info m-3">
 			<i class="bi bi-save"></i> Guardar
+		</button>
+		<button type="reset" class="btn btn-light text-danger m-3">
+			<i class="bi bi-eraser"></i> Vaciar campos
 		</button>
 	</form>
 
