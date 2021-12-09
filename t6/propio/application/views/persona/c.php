@@ -10,7 +10,23 @@
 		
 		<div class="form-group p-2 px-3 formulario">
 			<label for="id-pais">País de nacimiento</label> 
-    		<select class="form-control" id="id-pais" name="idPais">
+    		<select class="form-control" id="id-pais" name="idPaisNacimiento">
+            	<option>Elige un país</option>
+            	
+            	<?php foreach($paises as $pais):?>
+    				<option value="<?=$pais -> id?>">
+    					<?=$pais -> nombre?>
+    					
+    				</option>
+    				
+    			<?php endforeach;?>
+            </select>
+            <small id="id-pais" class="form-text text-muted">Elige un país de la lista.</small>
+        </div>
+        
+        <div class="form-group p-2 px-3 formulario">
+			<label for="id-pais">País de residencia</label> 
+    		<select class="form-control" id="id-pais" name="idPaisResidencia">
             	<option>Elige un país</option>
             	
             	<?php foreach($paises as $pais):?>

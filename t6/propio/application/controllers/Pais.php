@@ -48,7 +48,7 @@ class Pais extends CI_Controller {
     }
     
     function uPost(){
-        $nombre = isset($_POST['nombrePais']) ? $_POST['nombrePais'] : 'error';
+        $nombre = isset($_POST['nombrePais']) ? $_POST['nombrePais'] : 'Error';
         $idPais = isset($_POST['idPais']) ? $_POST['idPais'] : null;
         
         $this -> load -> model('Pais_model');
@@ -57,16 +57,21 @@ class Pais extends CI_Controller {
             $this -> Pais_model -> u($idPais, $nombre);
             redirect(base_url() . 'pais/r');
         } catch (Exception $e) {
-            error($e -> getMessage(), 'pais/r');
+            errorMsg($e -> getMessage(), 'pais/r');
         }
         
     }
     
     //Borrar (delete) países
     function d() {
-        $idPais = isset($_GET['idPais']) ? $_GET['idPais'] : null;
+        $idPais = isset($_POST['idPais']) ? $_POST['idPais'] : null;
         $this -> load -> model('Pais_model');
-        $this -> Pais_model -> d();
+        try {
+            $this -> Pais_model -> d($idPais); 
+            redirect(base_url() . 'pais/r');
+        } catch (Exception $e){
+            errorMsg($e -> getMessage(), 'pais/r');
+        }
     }
 }
 ?>

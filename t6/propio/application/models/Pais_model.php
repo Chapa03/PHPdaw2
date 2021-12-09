@@ -27,6 +27,16 @@ class Pais_model extends CI_Model {
         }
     }
     
+    function d($idPais) {
+        if ($idPais != null) {
+            $pais = R::load('pais', $idPais);
+            if($pais -> id == 0) {
+                throw new Exception ("El país con id={$pais -> id} no existe.");
+            }
+            R::trash($pais);
+        }
+    }
+    
     
     function getAll() {
         return R::findAll('pais');

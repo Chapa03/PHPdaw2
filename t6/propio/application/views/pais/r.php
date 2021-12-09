@@ -12,7 +12,10 @@
             			Nombre del país
             		</th>
             		<th>
-            			Usuarios
+            			Nacidos
+            		</th>
+            		<th>
+            			Residentes
             		</th>
             		<th>
             			<button class="btn btn-light text-info btn-sm float-end" type="button" onclick="location.href='<?=base_url()?>pais/c'">
@@ -31,7 +34,7 @@
             					<form action="<?=base_url()?>pais/u">
                 					<button class="btn btn-light text-primary" type="submit" name="idPais" value="<?=$pais -> id?>"><i class="bi bi-pencil text-"></i></button>
                 				</form> 
-                				<form action="<?=base_url()?>pais/d">
+                				<form action="<?=base_url()?>pais/d" method="post">
                 					<button class="btn btn-light text-danger" type="submit" name="idPais" value="<?=$pais -> id?>"><i class="bi bi-trash"></i></button>
                 				</form> 
             				</div>
@@ -39,9 +42,15 @@
             			<td>
             				<?=$pais -> nombre?>
             			</td>
-            			<td colspan="2">
+            			<td>
             				<?php foreach ($pais -> alias('paisNacimiento') -> ownPersonaList as $persona):?>
-            					<?=$persona -> nombre?>
+            					<?="· " . $persona -> nombre?>
+            					<?='<br/>'?>
+            				<?php endforeach;?>
+            			</td>
+            			<td colspan="2">
+            				<?php foreach ($pais -> alias('paisResidencia') -> ownPersonaList as $persona):?>
+            					<?="· " . $persona -> nombre?>
             					<?='<br/>'?>
             				<?php endforeach;?>
             			</td>

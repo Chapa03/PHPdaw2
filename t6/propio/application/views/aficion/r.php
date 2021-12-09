@@ -6,6 +6,9 @@
     		<thead class="table-dark align-middle">
             	<tr>
             		<th>
+            			Acciones
+            		</th>
+            		<th>
             			Descripción de la afición
             		</th>
             		<th>
@@ -27,17 +30,27 @@
             		
             		<tr>
             			<td>
+            				<div class="d-flex justify-content-evenly">
+            					<form action="<?=base_url()?>aficion/u">
+                					<button class="btn btn-light text-primary" type="submit" name="idAficion" value="<?=$aficion -> id?>"><i class="bi bi-pencil text-"></i></button>
+                				</form> 
+                				<form action="<?=base_url()?>aficion/d" method="post">
+                					<button class="btn btn-light text-danger" type="submit" name="idAficion" value="<?=$aficion -> id?>"><i class="bi bi-trash"></i></button>
+                				</form> 
+            				</div>
+            			</td>
+            			<td>
             				<?=$aficion -> texto?>
             			</td>
             			<td>
             				<?php foreach ($aficion -> ownGustaList as $gusta):?>
-            					<?=$gusta -> persona -> nombre?>
+            					<?="· " . $gusta -> persona -> nombre?>
             					<?='<br/>'?>
             				<?php endforeach;?>
             			</td>
             			<td colspan="2">
             				<?php foreach($aficion -> ownOdiaList as $odia):?>
-            					<?=$odia -> persona -> nombre ?>
+            					<?="· " . $odia -> persona -> nombre ?>
             					<?='<br/>'?>
             				<?php endforeach;?>
             			</td>
