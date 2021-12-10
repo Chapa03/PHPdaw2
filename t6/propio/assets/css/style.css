@@ -31,6 +31,6 @@ tbody {
 }
 
 ::selection {
-	background-color: rgb(23, 162, 184, 1);
-	color: rgb(52, 58, 64, 1);
+	background-color: var(--info);
+	color: var(--light);
 }
